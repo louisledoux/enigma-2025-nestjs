@@ -19,8 +19,19 @@ export interface CreateOrderDto {
         // IDs des produits
         connect: string[];
       };
+      // Quantités des produits
+      productsQuantity: {
+        data: ProductsQuantity[];
+      };
+      // Prix total
+      total: number;
     };
   };
+}
+
+export interface ProductsQuantity {
+  id: string;
+  quantity: number;
 }
 
 export interface Order {
@@ -41,5 +52,11 @@ export interface Order {
       zip: string;
       country: string;
     };
+    // Quantités des produits
+    productsQuantity: {
+      data: ProductsQuantity[];
+    };
+    // Prix total
+    total: number;
   };
 }
